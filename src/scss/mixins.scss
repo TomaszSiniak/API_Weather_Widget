@@ -1,0 +1,21 @@
+    @mixin title {
+        font-size: 2rem;
+        padding: 0.5rem;
+        text-shadow: 1px 1px 3px #000, 1px 1px 3px #000;
+    }
+    
+    @mixin button {
+        padding: 1rem;
+        border-radius: $borRad;
+        outline: none;
+        border: none;
+        background-color: $main-color;
+        box-shadow: 1px 1px 10px #000, 1px 1px 10px $main-color, 1px 1px 10px #000;
+        display: block;
+        font-size: 1rem;
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+            transition: all 200ms ease-in;
+        }
+    }
