@@ -6,19 +6,21 @@ button.addEventListener('click', (e) => {
 
     const city = document.querySelector('.weather__input').value;
     const API_KEY = 'a3d93545db37f2083123dd0518479e2a';
-    const url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&APPID=' + API_KEY;
+    const url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&APPID=' + API_KEY;
 
-    //    IE DOESNT SUPPORT fetch - I just wanted to train fetch methodology;
+    //    IE DOESNT SUPPORT fetch - I just wanted to train fetch method;
 
 
     fetch(url)
         .then(data => {
             if (data.status !== 200) {
                 console.log('we have a problem :), spróbuj później lub sprawdź czy wpisano nazwę miasta. Status:  ' + data.status);
+                console.log('On IE doesnt work, I used fetch API to get data')
                 return;
             }
             data.json().then(city => {
-                console.log('On IE 11 doesnt work, I used fetch API to get data')
+                console.log('On IE doesnt work, I used fetch API to get data')
+
 
                 if (city !== '') {
 
